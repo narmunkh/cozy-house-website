@@ -86,6 +86,56 @@
             </div>
         </div>
     </section>
+
+    <!-- Updated Filter Section -->
+    <section id="filter">
+        <div class="container">
+            <h2>Filter Pets</h2>
+            <form id="filterForm">
+                <!-- Type -->
+                <label for="type">Type:</label>
+                <select id="type" name="type">
+                    <option value="">Any</option>
+                </select>
+
+                <!-- Minimum Age -->
+                <label for="ageMin">Min Age:</label>
+                <input type="range" id="ageMin" name="ageMin" min="0" max="20" value="0" oninput="ageMinOutput.value = ageMin.value">
+                <output id="ageMinOutput">0</output> years
+
+                <!-- Maximum Age -->
+                <label for="ageMax">Max Age:</label>
+                <input type="range" id="ageMax" name="ageMax" min="0" max="20" value="20" oninput="ageMaxOutput.value = ageMax.value">
+                <output id="ageMaxOutput">20</output> years
+
+                <!-- Breed -->
+                <label for="breed">Breed:</label>
+                <select id="breed" name="breed">
+                    <option value="">Any</option>
+                </select>
+
+                <!-- Location -->
+                <label for="location">Location:</label>
+                <select id="location" name="location">
+                    <option value="">Any</option>
+                </select>
+
+                <!-- Gender -->
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                    <option value="">Any</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+
+                <button type="button" onclick="filterPets()">Filter</button>
+            </form>
+        </div>
+    </section>
+    
+    
+
+
     <section class="py-50" id="pets">
         <div class="container">
             <h2>Our freinds who<br>are looking for a house</h2>
@@ -151,6 +201,7 @@
             </div>
         </div>
     </footer>
+    <script src="filterPets.js"></script>
 </body>
 
 </html>

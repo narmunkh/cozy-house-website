@@ -47,10 +47,10 @@
                 </div>
                 <nav class="nav_menu">
                     <ul>
-                        <li><a title="About the shelter">About the Shelter</a></li>
-                        <li><a title="Our pets" class="active">Our pets</a></li>
+                        <li><a title="About the shelter" href="#about_the_shelter">About the Shelter</a></li>
+                        <li><a title="Our pets" class="active" href="#filter">Our pets</a></li>
                         <li><a href="part3.html" title="Educational Resources">Educational Resources</a></li>
-                        <li><a title="Contacts">Contacts</a></li>
+                        <li><a title="Contacts" href="#footer">Contacts</a></li>
                     </ul>
                 </nav>
             </div>
@@ -75,7 +75,7 @@
                     </figure>
                 </div>
                 <div class="about_text col-lg-5">
-                    <h2>About the shelter<br>&ldquo;Cozy House&rdquo;</h2>
+                    <h2 id="about_the_shelter">About the shelter<br>&ldquo;Cozy House&rdquo;</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, maxime voluptates. Animi eaque
                         cupiditate facilis provident nam necessitatibus, recusandae dignissimos laborum labore. </p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, maxime voluptates. Animi eaque
@@ -86,6 +86,52 @@
             </div>
         </div>
     </section>
+
+    <!-- Updated Filter Section -->
+    <section id="filter">
+        <div class="container">
+            <h2>Filter Pets</h2>
+            <form id="filterForm">
+                <!-- Type -->
+                <label for="type">Type:</label>
+                <select id="type" name="type">
+                    <!-- Options will be populated by JavaScript -->
+                </select>
+    
+                <!-- Minimum Age -->
+                <label for="ageMin">Min Age:</label>
+                <input type="range" id="ageMin" name="ageMin" min="0" max="20" value="0" oninput="ageMinOutput.value = ageMin.value">
+                <output id="ageMinOutput">0</output> years
+    
+                <!-- Maximum Age -->
+                <label for="ageMax">Max Age:</label>
+                <input type="range" id="ageMax" name="ageMax" min="0" max="20" value="20" oninput="ageMaxOutput.value = ageMax.value">
+                <output id="ageMaxOutput">20</output> years
+    
+                <!-- Breed -->
+                <label for="breed">Breed:</label>
+                <select id="breed" name="breed">
+                    <!-- Options will be populated by JavaScript -->
+                </select>
+    
+                <!-- Location -->
+                <label for="location">Location:</label>
+                <select id="location" name="location">
+                    <!-- Options will be populated by JavaScript -->
+                </select>
+    
+                <!-- Gender -->
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                    <!-- Options will be populated by JavaScript -->
+                </select>
+            </form>
+        </div>
+    </section>
+    
+    
+
+
     <section class="py-50" id="pets">
         <div class="container">
             <h2>Our freinds who<br>are looking for a house</h2>
@@ -151,6 +197,7 @@
             </div>
         </div>
     </footer>
+    <script src="filterPets.js"></script>
 </body>
 
 </html>

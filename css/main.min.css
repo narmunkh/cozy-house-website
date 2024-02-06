@@ -651,3 +651,25 @@ button.card_number {
         /*hack :( */
     }
 }
+
+#filter {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#filterForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+#filterForm label {
+    margin-right: 10px;
+}
+
+#filterForm input[type=range], #filterForm select, #filterForm output {
+    margin-bottom: 10px;
+}
+
+/* You might need to adjust these styles based on your specific design */

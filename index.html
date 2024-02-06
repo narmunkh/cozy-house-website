@@ -95,40 +95,36 @@
                 <!-- Type -->
                 <label for="type">Type:</label>
                 <select id="type" name="type">
-                    <option value="">Any</option>
+                    <!-- Options will be populated by JavaScript -->
                 </select>
-
+    
                 <!-- Minimum Age -->
                 <label for="ageMin">Min Age:</label>
                 <input type="range" id="ageMin" name="ageMin" min="0" max="20" value="0" oninput="ageMinOutput.value = ageMin.value">
                 <output id="ageMinOutput">0</output> years
-
+    
                 <!-- Maximum Age -->
                 <label for="ageMax">Max Age:</label>
                 <input type="range" id="ageMax" name="ageMax" min="0" max="20" value="20" oninput="ageMaxOutput.value = ageMax.value">
                 <output id="ageMaxOutput">20</output> years
-
+    
                 <!-- Breed -->
                 <label for="breed">Breed:</label>
                 <select id="breed" name="breed">
-                    <option value="">Any</option>
+                    <!-- Options will be populated by JavaScript -->
                 </select>
-
+    
                 <!-- Location -->
                 <label for="location">Location:</label>
                 <select id="location" name="location">
-                    <option value="">Any</option>
+                    <!-- Options will be populated by JavaScript -->
                 </select>
-
+    
                 <!-- Gender -->
                 <label for="gender">Gender:</label>
                 <select id="gender" name="gender">
-                    <option value="">Any</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
+                    <!-- Options will be populated by JavaScript -->
                 </select>
-
-                <button type="button" onclick="filterPets()">Filter</button>
             </form>
         </div>
     </section>

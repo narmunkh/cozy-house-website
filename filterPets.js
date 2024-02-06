@@ -1,4 +1,3 @@
-// Embedding pets data directly into the JavaScript file
 const petsData = [
     {
         "id": 1,
@@ -167,46 +166,29 @@ const petsData = [
     }
 ];
 
-document.addEventListener('DOMContentLoaded', function() {
-    populateDropdownsOnce(petsData);
-    displayPets(petsData);
-    document.getElementById('filterForm').addEventListener('change', filterPets);
-});
-
-function populateDropdownsOnce(pets) {
-    populateDropdown('type', getUniqueValues(pets, 'type'));
-    populateDropdown('breed', getUniqueValues(pets, 'breed'));
-    populateDropdown('location', getUniqueValues(pets, 'location'));
-    populateDropdown('gender', getUniqueValues(pets, 'gender'));
-}
-
-function getUniqueValues(pets, key) {
-    const values = pets.map(pet => pet[key]);
-    return ['Any', ...new Set(values)];
-}
 
 function populateDropdown(elementId, options) {
     const select = document.getElementById(elementId);
+    if (!select) return; // Check if the element exists
     select.innerHTML = options.map(option => `<option value="${option}">${option}</option>`).join('');
-    if (elementId !== 'gender') { // 'Any' should be an actual option for gender
-        select.children[0].value = ''; // Set 'Any' option's value to an empty string for filtering
-    }
+    // Add 'Any' option for all dropdowns at the beginning
+    select.insertAdjacentHTML('afterbegin', `<option value="">Any</option>`);
 }
 
-function filterPets() {
-    const type = document.getElementById('type').value;
-    const breed = document.getElementById('breed').value;
-    const location = document.getElementById('location').value;
-    const gender = document.getElementById('gender').value;
+function populateDropdownsOnce(pets) {
+    const types = getUniqueValues(pets, 'type');
+    const breeds = getUniqueValues(pets, 'breed');
+    const locations = getUniqueValues(pets, 'location');
+    const genders = getUniqueValues(pets, 'gender');
+    
+    populateDropdown('type', types);
+    populateDropdown('breed', breeds);
+    populateDropdown('location', locations);
+    populateDropdown('gender', genders);
+}
 
-    const filteredPets = petsData.filter(pet => {
-        return (type === '' || pet.type === type) &&
-               (breed === '' || pet.breed === breed) &&
-               (location === '' || pet.location === location) &&
-               (gender === 'Any' || pet.gender === gender); // 'Any' is kept for gender to allow all values
-    });
-
-    displayPets(filteredPets);
+function getUniqueValues(pets, key) {
+    return Array.from(new Set(pets.map(pet => pet[key])));
 }
 
 function displayPets(pets) {
@@ -222,4 +204,30 @@ function displayPets(pets) {
         `;
         petsContainer.appendChild(petElement);
     });
+}   
+
+function filterPets() {
+    const type = document.getElementById('type').value;
+    const breed = document.getElementById('breed').value;
+    const location = document.getElementById('location').value;
+    const gender = document.getElementById('gender').value;
+    const ageMin = parseInt(document.getElementById('ageMin').value, 10);
+    const ageMax = parseInt(document.getElementById('ageMax').value, 10);
+
+    const filteredPets = petsData.filter(pet => {
+        return (type === '' || pet.type === type) &&
+               (breed === '' || pet.breed === breed) &&
+               (location === '' || pet.location === location) &&
+               (gender === '' || pet.gender === gender) &&
+               (pet.age >= ageMin && pet.age <= ageMax);
+    });
+
+    displayPets(filteredPets);
 }
+
+// Call the populateDropdownsOnce function to initialize the dropdowns
+document.addEventListener('DOMContentLoaded', function() {
+    populateDropdownsOnce(petsData);
+    displayPets(petsData);
+    document.getElementById('filterForm').addEventListener('change', filterPets);
+});

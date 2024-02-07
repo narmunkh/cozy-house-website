@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description"
+        content="Cozy house is a static website template on the theme of pet adoption made with pure HTML and CSS">
+    <meta name="keywords" content="website template,cozy house,hmtl,css,cozy,web design,inspiration,">
+    <meta name="author" content="Arnol Fokam" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:site_name" content="Cozy house - Website template" />
+    <meta property="og:title" content="Cozy house - Website template made with pure html and css" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/ArnolFokam/cozy-house-website-template/master/cozy_house_website_template.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1668" />
+    <meta property="og:image:height" content="690" />
+    <meta property="og:image:alt" content="The banner and naigation menu of cozy website template" />
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/ArnolFokam/cozy-house-website-template/master/cozy_house_website_template_small.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="400" />
+    <meta property="og:description"
+        content="Cozy house is a static website template on the theme of pet adoption made with pure HTML and CSS" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://arnolfokam.github.io/cozy-house-website-template/" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <title>Cozy house - Website template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+    <link rel="stylesheet" as="style" type="text/css" media="screen" href="css/main.min.css">
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="row" id="navbar"> <input type="checkbox" id="mobile-toggle"> <label class="hamburger"
+                    id="mobile-toggle-btn" for="mobile-toggle"> <span></span> <span></span> <span></span> </label>
+                <div class="nav-brand">
+                    <h1><a href="/index.html" title="cozy house website template">Cozy House</a></h1>
+                </div>
+                <nav class="nav_menu">
+                    <ul>
+                        <li><a title="About the shelter">About the Shelter</a></li>
+                        <li><a href="index.html" title="Our pets">Our pets</a></li>
+                        <li><a href="part3.html" title="Educational Resources" >Educational Resources</a></li>
+                        <li><a href="form.html" title="Fill out an Application" class="active">Fill out an Application</a></li>
+                        <li><a title="Contacts">Contacts</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div id="sub-banner" class="flex"></div>  
+    <form id="form" >
+        <div class="container">
+            <div class="row justify-content-left">                
+                <div class="form__title">Apply for Adoption</div>
+                <p class="form__desc">
+                    If you are interested in helping find a home for one of our furry friends, please fill out the form so that we can make sure you and your future pet are a perfect fit.
+                </p>
+                <div class="col-md-5">
+                    <label for="FirstName" class="form__label">First Name</label>
+                    <input type="text" class="form__input" name="FirstName" id="FirstName" placeholder="John">
+                </div> 
+                <div class="col-md-5">
+                    <label for="LastName" class="form__label">Last Name</label>
+                    <input type="text" class="form__input" name="LastName" id="LastName" placeholder="Doe">
+                </div> 
+                <div class="col-md-12 ">
+                    <label for="ofAge" class="form__label">Are you 18 years or older?</label>
+                </div>
+                <div class="col-md-1">
+                    <label for="ofAge" class="radio">
+                        <input type="radio" class="radio__input" name="ofAge" id="ofAge" value="yes"> 
+                        <p>yes</p>
+                    </label>
+                    <label for="ofAgeNo" class="radio">
+                        <input type="radio" class="radio__input" name="ofAge" id="ofAgeNo" value="no"> 
+                        <p>no</p>
+                    </label>
+                </div>
+                <div class="col-md-12"></div>
+                <div class="col-md-5">
+                    <label for="phone" class="form__label">Telephone number</label>
+                    <input type="tel" class="form__input" name="phone" id="phone" placeholder="(###) ###-####">
+                </div>
+                <div class="col-md-5">
+                    <label for="Email" class="form__label">E-mail Address</label>
+                    <input type="" class="form__input" name="Email" id="Email" placeholder="name@example.com">
+                </div>
+                <div class="col-md-4">
+                    <label for="Address" class="form__label">Address</label>
+                </div>
+                <div class="col-md-10">
+                    <input type="text" class="form__input" name="Address" id="Address" placeholder="Street">
+                </div>
+                <div class="col-md-5">
+                    <input type="text" class="form__input" name="Address" id="Address" placeholder="City">
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form__input" name="Address" id="Address" placeholder="State">
+                </div>
+                <div class="col-md-3">
+                    <input type="text" class="form__input" name="Address" id="Address" placeholder="Zip">
+                </div>
+                <div class="col-md-12"> <p> </p></div>
+                <div class="col-md-5">
+                    <label for="ResidenceType" class="form__label">Residence Type</label>
+                    <select class="form__select" name="ResidenceType" id="ResidenceType">
+                        <option value="none">--Select--</option>
+                        <option value="house">House</option>
+                        <option value="Townhouse/Duplex">Townhouse/Duplex</option>
+                        <option value="Apartment/Condo">Apartment/Condo</option>
+                        <option value="Trailer">Trailer</option>
+                        <option value="Hotel/Motel">Hotel/Motel</option>
+                        <option value="Boat">Boat</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="NumResidents" class="form__label">Number of household residents</label>
+                    <input type="number" class="form__input" name="NumResidents" id="NumResidents" min="1" max="99" placeholder="(1-99)">
+                </div>
+                
+                <div class="col-md-4">
+                    <label for="PetType" class="form__label">What kind of pet are you looking for?</label>
+                    <select class="form__select" name="PetType" id="PetType">
+                        <option value="none">--Select--</option>
+                        <option value="dog">Dog</option>
+                        <option value="cat">Cat</option>
+                        <option value="rabbit">Rabbit</option>
+                        <option value="Hamster">Hamster</option>
+                        <option value="Guinea Pig">Guinea Pig</option>
+                        <option value="Gerbil">Gerbil</option>
+                        <option value="fish">Fish</option>.
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="col-md-12">
+                    <label for="experienced" class="form__label">Have you cared for pets before?</label>
+                </div>
+                <div class="col-md-2">
+                    <label for="experienced" class="radio">
+                        <input type="radio" class="radio__input" name="experienced" id="experienced" value="yes"> 
+                        <p>yes</p>
+                    </label>
+                    <label for="experiencedNo" class="radio">
+                        <input type="radio" class="radio__input" name="experienced" id="experiencedNo" value="no"> 
+                        <p>no</p>
+                    </label>
+                </div>
+                
+                <div class="col-md-12"></div>
+                <div class="col-md-4">
+                    <label for="Date" class="form__label">Date</label>
+                    <input type="date" class="form__input" name="Date" id="Date">
+                </div>
+                <div class="col-md-12"></div>
+                <div class="col-md-4"></div>
+                <div class="col-md-2">
+                    <button class="card_number">Submit</button>
+                </div> 
+            </div>
+        </div>
+    </form>
+    
+</body>
+<footer id="footer" class="py-50">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4 col-xs-6">
+                <h2>For questions<br>and suggestions</h2>
+                <ul>
+                    <li><img src="images/SVG Icon/envelope.svg">email@shelter.com</li>
+                    <li><img src="images/SVG Icon/telephone.svg">+13 674 567 75 54</li>
+                </ul>
+            </div>
+            <div class="col-md-4 col-xs-6">
+                <h2>We are waiting<br>for your visit</h2>
+                <ul>
+                    <li><img src="images/SVG Icon/pin.svg">Boston, Central Street, 1st (Entrance from the store)
+                    </li>
+                    <li><img src="images/SVG Icon/pin.svg">London, South Park, 18st</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>

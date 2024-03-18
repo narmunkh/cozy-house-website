@@ -90,27 +90,21 @@ a:hover {
     font-size: 16px; 
     justify-content: center;
     margin-left: 10em;
-    margin-right: 10em;
-
-    
+    margin-right: 10em;   
 }
 
 
 #form * {
-    
     align-items: center;
-    width: 100%;
-    margin: 0.5em;width: 100%;
-    
+    margin: 0.5em;
     justify-content: left;
-    
     line-height: 1;
+    padding-top: 100px 0;
 }
 
 .form__title {
     font-size: 2em;
     font-weight: 600;
-
 }
 
 .form__label {
@@ -120,7 +114,6 @@ a:hover {
 .form__input {
     appearance: none;
     width: 100%;
-    
 
     min-height: calc(0.9em + (0.8em * 2) + 0.6em); 
     padding: 0.8em;
@@ -166,14 +159,6 @@ a:hover {
     cursor: pointer;
     
 }
-
-/* input[type="radio"] + label {
-    display:block;
-    white-space: nowrap;
-    padding-top: 0;
-    margin-top: 0;
-} */
-
 
 @media screen and (min-width: 576px) {
     .col-xs-6 {
@@ -284,7 +269,8 @@ a:hover {
     left: 0;
     width: 100%;
     z-index: 999;
-    background-color: black;
+    background-color: brown;
+    background-image: url('../images/Background_footer1.png');
     height: auto;
     max-height: 150px;
     padding: 2em 0 2em;

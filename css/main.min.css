@@ -278,13 +278,13 @@ a:hover {
 
 /*Navigation*/
 #header {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     left: 0;
     width: 100%;
     z-index: 999;
-    background-color: transparent;
+    background-color: black;
     height: auto;
     max-height: 150px;
     padding: 2em 0 2em;

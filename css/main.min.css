@@ -436,8 +436,7 @@ a:hover {
 }
 
 #sub-banner {
-    background-color: brown;
-    background-image: url('../images/Background_footer1.png');
+    background-color: white;
     background-size: cover;
     background-repeat: no-repeat;
     color: #edd1ad;

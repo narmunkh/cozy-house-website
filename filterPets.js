@@ -8,7 +8,7 @@ const petsData = [
         "name": "Buddy",
         "gender": "Male",
         "description": "Friendly and energetic. Great with kids.",
-        "image": "images/Dog.png"
+        "image": "images/Katrine.png"
     },
     {
         "id": 2,
@@ -52,7 +52,7 @@ const petsData = [
         "name": "Lily",
         "gender": "Female",
         "description": "Quiet and loves to be pampered.",
-        "image": "images/Pets.png"
+        "image": "images/Dog_donate.png"
     },
     {
         "id": 6,
@@ -74,7 +74,7 @@ const petsData = [
         "name": "Misty",
         "gender": "Female",
         "description": "Independent but loves attention.",
-        "image": "images/Pets.png"
+        "image": "images/Dog_donate.png"
     },
     {
         "id": 8,
@@ -118,7 +118,7 @@ const petsData = [
         "name": "Shadow",
         "gender": "Male",
         "description": "Shy at first but very affectionate once comfortable.",
-        "image": "images/Pets.png"
+        "image": "images/Dog_donate.png"
     },
     {
         "id": 12,
@@ -140,7 +140,7 @@ const petsData = [
         "name": "Gizmo",
         "gender": "Male",
         "description": "Loves warmth and being the center of attention.",
-        "image": "images/Pets.png"
+        "image": "images/Dog_donate.png"
     },
     {
         "id": 14,

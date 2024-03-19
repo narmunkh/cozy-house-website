@@ -46,10 +46,10 @@
                 </div>
                 <nav class="nav_menu">
                     <ul>
-                        <li><a title="Our pets" class="active" href="index.html">Our pets</a></li>
+                        <li><a title="Find Your Pet" class="active" href="index.html">Find Your Pet</a></li>
                         <li><a href="part3.html" title="Educational Resources">Educational Resources</a></li>
                         <li><a href="form.html" title="Fill out an Application">Fill out an Application</a></li>
-                        <li><a title="Contacts" href="#footer">Contacts</a></li>
+                        <li><a title="Contact Us" href="#footer">Contact Us</a></li>
                     </ul>
                 </nav>
             </div>
@@ -89,41 +89,53 @@
     <!-- Updated Filter Section -->
     <section id="filter">
         <div class="container">
-            <h2>Filter Pets</h2>
+            <h2 class = "form__title" style="text-align: center;">Filter Pets</h2>
             <form id="filterForm">
                 <!-- Type -->
-                <label for="type">Type:</label>
-                <select id="type" name="type">
-                    <!-- Options will be populated by JavaScript -->
-                </select>
+                <div class="col-md-2">
+                    <label for="type" class = "form__label">Type of pet:</label>
+                    <select id="type" name="type" class = "form__select">
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
     
                 <!-- Minimum Age -->
-                <label for="ageMin">Min Age:</label>
-                <input type="range" id="ageMin" name="ageMin" min="0" max="20" value="0" oninput="ageMinOutput.value = ageMin.value">
-                <output id="ageMinOutput">0</output> years
+                <div class="col-md-4">
+                    <label for="ageMin" class = "form__label">Min Age:</label>
+                    <input type="range" id="ageMin" name="ageMin" min="0" max="20" value="0" oninput="ageMinOutput.value = ageMin.value">
+                    <output id="ageMinOutput">0</output> years
+                </div>
     
                 <!-- Maximum Age -->
-                <label for="ageMax">Max Age:</label>
-                <input type="range" id="ageMax" name="ageMax" min="0" max="20" value="20" oninput="ageMaxOutput.value = ageMax.value">
-                <output id="ageMaxOutput">20</output> years
-    
+                <div class="col-md-4">
+                    <label for="ageMax" class = "form__label">Max Age:</label>
+                    <input type="range" id="ageMax" name="ageMax" min="0" max="20" value="20" oninput="ageMaxOutput.value = ageMax.value">
+                    <output id="ageMaxOutput">20</output> years
+                </div>
+
                 <!-- Breed -->
-                <label for="breed">Breed:</label>
-                <select id="breed" name="breed">
-                    <!-- Options will be populated by JavaScript -->
-                </select>
+                <div class="col-md-2">
+                    <label for="breed" class = "form__label">Breed:</label>
+                    <select id="breed" name="breed" class = "form__select">
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
     
                 <!-- Location -->
-                <label for="location">Location:</label>
-                <select id="location" name="location">
-                    <!-- Options will be populated by JavaScript -->
-                </select>
+                <div class="col-md-2">
+                    <label for="location" class = "form__label">Location:</label>
+                    <select id="location" name="location" class = "form__select">
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
     
                 <!-- Gender -->
-                <label for="gender">Gender:</label>
-                <select id="gender" name="gender">
-                    <!-- Options will be populated by JavaScript -->
-                </select>
+                <div class="col-md-2">
+                    <label for="gender" class = "form__label">Gender:</label>
+                    <select id="gender" name="gender" class = "form__select">
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
             </form>
         </div>
     </section>

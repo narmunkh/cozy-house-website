@@ -844,6 +844,18 @@ button.card_number {
    height: 40px;
    background-color:#f3be7a ;
 }
+
 .required::after{
     content: " *";
     color: rgb(203, 11, 11);}
+
+.slider_controls {
+    display: flex;
+    align-items: center;
+}
+
+.pets_slider {
+    flex-grow: 1;
+    display: flex;
+    overflow: hidden;
+}

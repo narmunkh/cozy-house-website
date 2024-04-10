@@ -212,11 +212,42 @@ function displayPets(pets) {
         petElement.className = 'slide';
         petElement.innerHTML = `
             <figure><img src="${pet.image}" width='270' height='300' alt="${pet.name}" /></figure>
-            <p>${pet.name}</p><a href="#">Learn more</a>
+            <p>${pet.name}</p><a href="#" class="learn-more-btn" data-id="${pet.id}">Learn more</a>
         `;
         petsContainer.appendChild(petElement);
     });
+
+    document.querySelectorAll('.learn-more-btn').forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            const petId = this.getAttribute('data-id');
+            const pet = petsData.find(pet => pet.id.toString() === petId);
+            if (pet) {
+                showPetDetails(pet);
+            }
+        });
+    });
 }
+
+function showPetDetails(pet) {
+    document.getElementById('petModalImage').src = pet.image;
+    document.getElementById('petModalImage').alt = pet.name;
+    document.getElementById('petModalName').textContent = pet.name;
+    document.getElementById('petModalAge').textContent = `Age: ${pet.age}`;
+    document.getElementById('petModalDescription').textContent = pet.description;
+    // location, gender and breed
+    document.getElementById('petModalLocation').textContent = `Location: ${pet.location}`;
+    document.getElementById('petModalGender').textContent   = `Gender: ${pet.gender}`;
+    document.getElementById('petModalBreed').textContent    = `Breed: ${pet.breed}`;
+
+    document.getElementById('petDetailsModal').style.display = 'block';
+}
+
+
+// Close the modal when the close button is clicked
+document.querySelector('.close-button').addEventListener('click', function() {
+    document.getElementById('petDetailsModal').style.display = 'none';
+});
 
 function navigateSlides(direction) {
     // Calculate the number of slides based on the petsData array

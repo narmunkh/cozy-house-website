@@ -827,3 +827,23 @@ button.card_number {
 }
 
 /* You might need to adjust these styles based on your specific design */
+.top-link {
+    transition: all .25s ease-in-out;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: inline-flex;
+    
+   cursor: pointer;
+   align-items: center;
+   justify-content: center;
+   margin: 0 3em 3em 0;
+   border-radius: 10%;
+   padding: .25em;
+   width: 40px;
+   height: 40px;
+   background-color:#f3be7a ;
+}
+.required::after{
+    content: " *";
+    color: rgb(203, 11, 11);}

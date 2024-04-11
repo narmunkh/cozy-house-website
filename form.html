@@ -76,18 +76,26 @@
                 </div>
                 <div class="col-md-1">
                     <label for="ofAge" class="radio">
-                        <input type="radio" class="radio__input" name="ofAge" id="ofAge" value="yes"> 
+                        <input type="radio" class="radio" name="ofAge" id="ofAge" value="yes"> 
                         <p>yes</p>
                     </label>
                     <label for="ofAgeNo" class="radio">
-                        <input type="radio" class="radio__input" name="ofAge" id="ofAgeNo" value="no"> 
+                        <input type="radio" class="radio" name="ofAge" id="ofAgeNo" value="no"> 
                         <p>no</p>
                     </label>
                 </div>
                 <div class="col-md-12"></div>
                 <div class="col-md-5">
                     <label for="phone" class="form__label required">Telephone number</label>
-                    <input required type="tel" class="form__input" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="###-####-####">
+                    <input required type="tel" class="form__input" name="phone" id="phone" oninput="this.value = this.value.replace(/[^0-9-]/g, '').replace(/(\..*)\./g, '$1');" maxlength="12" placeholder="###-###-####">
+                    <script>
+                        var tele = document.querySelector('#phone');
+                        phone.addEventListener('keyup', function(e){
+                            if (event.key != 'Backspace' && (tele.value.length === 3 || tele.value.length === 7)){
+                                tele.value += '-';
+                            }
+                        });
+                    </script>
                 </div>
                 <div class="col-md-5">
                     <label for="Email" class="form__label required">E-mail Address</label>
@@ -116,9 +124,9 @@
                         <option value="house">House</option>
                         <option value="Townhouse/Duplex">Townhouse/Duplex</option>
                         <option value="Apartment/Condo">Apartment/Condo</option>
-                        <option value="Trailer">Trailer</option>
+                        <!-- <option value="Trailer">Trailer</option>
                         <option value="Hotel/Motel">Hotel/Motel</option>
-                        <option value="Boat">Boat</option>
+                        <option value="Boat">Boat</option> -->
                         <option value="other">Other</option>
                     </select>
                 </div>
@@ -133,11 +141,11 @@
                         <option value="none">--Select--</option>
                         <option value="dog">Dog</option>
                         <option value="cat">Cat</option>
-                        <option value="rabbit">Rabbit</option>
+                        <!-- <option value="rabbit">Rabbit</option>
                         <option value="Hamster">Hamster</option>
                         <option value="Guinea Pig">Guinea Pig</option>
                         <option value="Gerbil">Gerbil</option>
-                        <option value="fish">Fish</option>.
+                        <option value="fish">Fish</option> -->
                         <option value="other">Other</option>
                     </select>
                 </div>
@@ -147,11 +155,11 @@
                 </div>
                 <div class="col-md-1">
                     <label for="experienced" class="radio">
-                        <input type="radio" class="radio__input" name="experienced" id="experienced" value="yes"> 
+                        <input type="radio" class="radio" name="experienced" id="experienced" value="yes"> 
                         <p>yes</p>
                     </label>
                     <label for="experiencedNo" class="radio">
-                        <input type="radio" class="radio__input" name="experienced" id="experiencedNo" value="no"> 
+                        <input type="radio" class="radio" name="experienced" id="experiencedNo" value="no"> 
                         <p>no</p>
                     </label>
                 </div>
@@ -167,7 +175,18 @@
                     <button class="card_number" onclick="confirmation()">Submit</button>
                     <script>
                         function confirmation() {
-                            alert("Thank you for your submission!");
+                            var val1 = document.getElementById("phone").value.trim();
+                            var val2 = document.getElementById("Email").value.trim();
+                            var val3 = document.getElementById("FirstName").value.trim();
+                            var val4 = document.getElementById("LastName").value.trim();
+                            
+                            if (val1 === "" || val2 === "" || val3 === "" || val4 === "") {
+                                alert("Please fill in all required fields.");
+                                // event.preventDefault(); // Prevent form submission
+                            } 
+                            else {
+                                alert("Thank you for your submission!");
+                            }
                         }
                     </script>
                 </div> 

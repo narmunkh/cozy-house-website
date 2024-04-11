@@ -191,20 +191,76 @@ function getUniqueValues(pets, key) {
     return Array.from(new Set(pets.map(pet => pet[key])));
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    populateDropdownsOnce(petsData);
+    displayPets(petsData.slice(0, 3)); // Initially display the first 3 pets
+
+    // Event listeners for slider navigation
+    document.querySelector('.slider_arrow_right').addEventListener('click', () => navigateSlides('right'));
+    document.querySelector('.slider_arrow_left').addEventListener('click', () => navigateSlides('left'));
+    document.getElementById('filterForm').addEventListener('change', filterPets);
+});
+
+let currentSlideIndex = 0; // Keeps track of the current slide index
+
 function displayPets(pets) {
     const petsContainer = document.querySelector('.pets_slider');
-    petsContainer.innerHTML = ''; // Clear existing pets
+    petsContainer.innerHTML = ''; // Clear existing pets before displaying new ones
 
     pets.forEach(pet => {
         const petElement = document.createElement('div');
         petElement.className = 'slide';
         petElement.innerHTML = `
-            <figure><img src="${pet.image}" width="270" /></figure>
-            <p>${pet.name}</p><a>Learn more</a>
+            <figure><img src="${pet.image}" width='270' height='300' alt="${pet.name}" /></figure>
+            <p>${pet.name}</p><a href="#" class="learn-more-btn" data-id="${pet.id}">Learn more</a>
         `;
         petsContainer.appendChild(petElement);
     });
-}   
+
+    document.querySelectorAll('.learn-more-btn').forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            const petId = this.getAttribute('data-id');
+            const pet = petsData.find(pet => pet.id.toString() === petId);
+            if (pet) {
+                showPetDetails(pet);
+            }
+        });
+    });
+}
+
+function showPetDetails(pet) {
+    document.getElementById('petModalImage').src = pet.image;
+    document.getElementById('petModalImage').alt = pet.name;
+    document.getElementById('petModalName').textContent = pet.name;
+    document.getElementById('petModalAge').textContent = `Age: ${pet.age}`;
+    document.getElementById('petModalDescription').textContent = pet.description;
+    // location, gender and breed
+    document.getElementById('petModalLocation').textContent = `Location: ${pet.location}`;
+    document.getElementById('petModalGender').textContent   = `Gender: ${pet.gender}`;
+    document.getElementById('petModalBreed').textContent    = `Breed: ${pet.breed}`;
+
+    document.getElementById('petDetailsModal').style.display = 'block';
+}
+
+
+// Close the modal when the close button is clicked
+document.querySelector('.close-button').addEventListener('click', function() {
+    document.getElementById('petDetailsModal').style.display = 'none';
+});
+
+function navigateSlides(direction) {
+    // Calculate the number of slides based on the petsData array
+    const numberOfSlides = Math.ceil(petsData.length / 3);
+    if (direction === 'right') {
+        currentSlideIndex = (currentSlideIndex + 1) % numberOfSlides;
+    } else if (direction === 'left') {
+        currentSlideIndex = (currentSlideIndex - 1 + numberOfSlides) % numberOfSlides;
+    }
+    const startIndex = currentSlideIndex * 3;
+    const endIndex = startIndex + 3;
+    displayPets(petsData.slice(startIndex, endIndex));
+}
 
 function filterPets() {
     const type = document.getElementById('type').value;
@@ -219,15 +275,11 @@ function filterPets() {
                (breed === '' || pet.breed === breed) &&
                (location === '' || pet.location === location) &&
                (gender === '' || pet.gender === gender) &&
-               (pet.age >= ageMin && pet.age <= ageMax);
+               (!isNaN(ageMin) && pet.age >= ageMin) &&
+               (!isNaN(ageMax) && pet.age <= ageMax);
     });
 
-    displayPets(filteredPets);
+    // Reset to the first slide of filtered results
+    currentSlideIndex = 0;
+    displayPets(filteredPets.slice(0, 3));
 }
-
-// Call the populateDropdownsOnce function to initialize the dropdowns
-document.addEventListener('DOMContentLoaded', function() {
-    populateDropdownsOnce(petsData);
-    displayPets(petsData);
-    document.getElementById('filterForm').addEventListener('change', filterPets);
-});

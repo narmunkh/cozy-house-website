@@ -147,19 +147,19 @@
         <div class="container">
             <h2>Our friends who<br>are looking for a house</h2>
             <div class="slider_wrapper">
-                <div class="pets_slider">
-                    <div class="slide" id="Katrine">
-                        <figure> <img src="images/Katrine.png" width="270" /> </figure>
-                        <p>Katrine</p><a>Learn more</a>
+                <div class="slider_controls">
+                    <button class="slider_arrow slider_arrow_left">
+                        <img src="images/SVG Icon/left_Arrow.webp" alt="left arrow" width="50">
+                    </button>
+                    <div class="pets_slider">
+                        <!-- <div class="slide" id="Katrine">
+                            <figure> <img src="images/Katrine.png" width="270" /> </figure>
+                            <p>Katrine</p><a>Learn more</a>
+                        </div> -->
                     </div>
-                    <div class="slide" id="Jennifer">
-                        <figure> <img src="images/Jennifer.png" width="270" /> </figure>
-                        <p>Jennifer</p><a>Learn more</a>
-                    </div>
-                    <div class="slide" id="Woody">
-                        <figure> <img src="images/Woody.png" width="270" /> </figure>
-                        <p>Woody</p><a>Learn more</a>
-                    </div>
+                    <button class="slider_arrow slider_arrow_right">
+                        <img src="images/SVG Icon/right_arrow.webp" alt="right arrow" width="50">
+                    </button>
                 </div>
                 <div class="slider_nav"> <a title="See Katrine" alt="a grey female cat standing" href="#Katrine"></a> <a
                     title="See Jennifer" alt="a white female puppy with brown ears sitting" href="#Jennifer"></a> <a
@@ -168,24 +168,23 @@
             </div>
         </div>
     </section>
-    <!-- <section id="donation" class="py-50">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="image_container col-lg-5">
-                    <figure> <img src="images/Dog_donate.png" alt="a brown dog lying on the floor"> </figure>
-                </div>
-                <div class="donation_text col-lg-5">
-                    <p>Name of the bank / Type of bank account</p><button class="card_number"><img
-                            src="images/SVG Icon/credit-card (1).svg" alt="credit-card">8380 2880 8028 8791
-                        7435</button>
-                    <h6>Legal information and Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, maxime
-                        voluptates. Animi eaque cupiditate facilis provident nam necessitatibus, recusandae dignissimos
-                        laborum labore eos vel. Animi nihil voluptas perspiciatis doloribus eaque? Lorem ipsum dolor sit
-                        amet consectetur adipisicing elit. Tenetur, maxime voluptates. Animi eaque. </h6>
-                </div>
-            </div>
+    
+    <div id="petDetailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <img id="petModalImage" src="" alt="Pet" width="270" height="300">
+            <h2 id="petModalName"></h2>
+            <p id="petModalAge"></p>
+            <p id="petModalGender"></p>
+            <p id="petModalLocation"></p>
+            <p id="petModalBreed"></p>
+            <p id="petModalDescription"></p>
         </div>
-    </section> -->
+    </div>
+
+    <a class="top-link hide" href="" id="js-top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 3"><path d="M12 6H0l6-6z"/></svg>
+    </a>
     <footer id="footer" class="py-50">
         <div class="container">
             <div class="row justify-content-center">

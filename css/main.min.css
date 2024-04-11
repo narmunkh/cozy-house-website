@@ -138,7 +138,6 @@ a:hover {
     padding: 0.8em;
     font-size: 0.9em;
     font-family: Arial, Helvetica, sans-serif;
-    cursor: pointer;
 
     outline: none;
     border: 1px solid #ddd;
@@ -160,6 +159,7 @@ a:hover {
     align-items: left;
     vertical-align: left;
     cursor: pointer;
+    
 }
 
 @media screen and (min-width: 576px) {
@@ -827,79 +827,3 @@ button.card_number {
 }
 
 /* You might need to adjust these styles based on your specific design */
-.top-link {
-    transition: all .25s ease-in-out;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    display: inline-flex;
-    
-   cursor: pointer;
-   align-items: center;
-   justify-content: center;
-   margin: 0 3em 3em 0;
-   border-radius: 10%;
-   padding: .25em;
-   width: 40px;
-   height: 40px;
-   background-color:#f3be7a ;
-}
-
-.required::after{
-    content: " *";
-    color: rgb(203, 11, 11);}
-
-.slider_controls {
-    display: flex;
-    align-items: center;
-}
-
-.pets_slider {
-    flex-grow: 1;
-    display: flex;
-    overflow: hidden;
-}
-
-.slide img {
-    width: 270px;
-    height: 300px; 
-    object-fit: cover;
-}
-
-
-/* CSS for the popup of learn more */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    padding-top: 60px;
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 5% auto; /* 5% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 25%; 
-}
-
-.close-button {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close-button:hover,
-.close-button:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
